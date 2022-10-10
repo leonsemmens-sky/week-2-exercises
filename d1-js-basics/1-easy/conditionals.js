@@ -7,7 +7,13 @@
   - If sides is 6 or higher log "Slow down, Einstein!" to console.
 */
 const d1EasyConditionals = (sides) => {
-  //Code goes here
+	if (sides < 3) {
+		console.log("No shape")
+	} else if (sides > 5) {
+		console.log("Slow down, Einstein")
+	} else {
+		console.log((["Triangle", "Rectangle", "Pentagon"])[sides - 3])
+	}
 };
 
 // Test command (in terminal) "npm run test:d1:easy:conditionals"

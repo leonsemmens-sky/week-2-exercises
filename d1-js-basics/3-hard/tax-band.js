@@ -14,12 +14,28 @@ Example £15,000.00 =>  £12,570.00 isn't taxed, then the remaining £2,430.00 i
 ||   £0         => £12,570.00   ||     0%     ||
 ||   £12,570.01 => £50,270.00   ||    20%     ||
 ||   £50,270.01 => £150,000.00  ||    40%     ||
-||   £150,000.00 => To the moon!||    45%     ||
+||   £150,000.01 => To the moon!||    45%     ||
 ||============================================||
 */
 
-function taxBand(salary) {}
+const tax = [[150000, 0.55], [50270, 0.6], [12570, 0.8]]
 
-con;
+function taxBand(salary) {
+    salary = Math.max(0, salary)
+
+    let income = 0
+    let taxed = 0
+    for (const [limit, rate] of tax) {
+        if (!(salary > limit)) continue;
+        const toTax = salary - limit - taxed
+        taxed += toTax
+        income += toTax * rate
+    }
+
+    income += salary - taxed
+    return Math.round(income * 100) / 100
+}
+
+// console.log(taxBand(51000))
 
 module.exports = { taxBand };

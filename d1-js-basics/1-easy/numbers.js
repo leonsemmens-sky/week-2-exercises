@@ -6,14 +6,23 @@ Create a variable called z and assign a value of 12.
 2. Log y to the console
 3. Log z to the console
 4. Log double the value of x to the console.
-5. Log double the triple of y to the console.
+5. Log triple the value of y to the console.
 6. Log half the value of z to the console.
 7. Log the result of x+y+z to the console.
 
 */
 
 function d1EasyNumbers() {
-  //code goes here
+	let x = 2,
+		y = 5,
+		z = 12;
+	console.log(x);
+	console.log(y);
+	console.log(z);
+	console.log(x * 2);
+	console.log(3 * y);
+	console.log(0.5 * z);
+	console.log(x + y + z);
 }
 d1EasyNumbers();
 
