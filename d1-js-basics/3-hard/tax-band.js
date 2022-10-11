@@ -19,14 +19,17 @@ Example £15,000.00 =>  £12,570.00 isn't taxed, then the remaining £2,430.00 i
 */
 
 const tax = [[150000, 0.55], [50270, 0.6], [12570, 0.8]]
+//const tax = [[150000, 1 - 0.45], [50270, 1 - 0.4], [12570, 1 - 0.2]]
 
 function taxBand(salary) {
+    console.trace()
     salary = Math.max(0, salary)
 
     let income = 0
     let taxed = 0
     for (const [limit, rate] of tax) {
-        if (!(salary > limit)) continue;
+        if (salary <= limit) continue;
+
         const toTax = salary - limit - taxed
         taxed += toTax
         income += toTax * rate
@@ -35,7 +38,5 @@ function taxBand(salary) {
     income += salary - taxed
     return Math.round(income * 100) / 100
 }
-
-// console.log(taxBand(51000))
 
 module.exports = { taxBand };

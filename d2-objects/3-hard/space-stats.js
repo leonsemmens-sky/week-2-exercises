@@ -24,5 +24,38 @@ Methods - setAgeInEarthDays(birthday)
 
 */
 
+const spaceStats = {
+    ageInEarthDays: 0,
+    ageInEarthYears: 0,
+    weightInKG: 0,
+    setAgeInEarthDays(birthday) {
+        let birthDate = new Date(birthday);
+        let timeAlive = new Date() - birthDate;
+        this.ageInEarthDays = Math.round(timeAlive / (1000 * 3600 * 24));
+        this.ageInEarthYears = this.ageInEarthDays / 365.25;
+    },
+    setWeightInKG(kg) {
+        this.weightInKG = kg;
+    },
+    weightOnMercury() {
+        return this.weightInKG * 0.38;
+    },
+    ageOnMercury() {
+        return this.ageInEarthYears * (365.25 / 88);
+    },
+    weightOnVenus() {
+        return this.weightInKG * 0.91;
+    },
+    ageOnVenus() {
+        return this.ageInEarthYears * (365.25 / 225);
+    },
+    weightOnMars() {
+        return this.weightInKG * 0.38;
+    },
+    ageOnMars() {
+        return this.ageInEarthYears * (365.25 / 687);
+    }
+}
+
 // Test command (in terminal) "npm run test:d2:hard:spaceFacts"
 module.exports = { spaceStats };

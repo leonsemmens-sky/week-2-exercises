@@ -16,5 +16,33 @@ eg mercury.yearLength => 88
 eg mercury.getYearLength() => 88 (Earth Days)
 */
 
+let earth = {
+    yearLength: 365.25,
+    getYearLength() {
+        return this.yearLength.toString() + " (Earth Days)"
+    }
+};
+
+let venus = {
+    yearLength: 225,
+    getYearLength() {
+        return this.yearLength.toString() + " (Earth Days)"
+    }
+};
+
+let mercury = {
+    yearLength: 88,
+    getYearLength() {
+        return this.yearLength.toString() + " (Earth Days)"
+    }
+};
+
+let mars = {
+    yearLength: 687,
+    getYearLength() {
+        return this.yearLength.toString() + " (Earth Days)"
+    }
+};
+
 // Test command (in terminal) "npm run test:d2:easy:planets-2"
 module.exports = { mercury, venus, earth, mars };

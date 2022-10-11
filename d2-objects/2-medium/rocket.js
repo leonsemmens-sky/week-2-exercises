@@ -13,7 +13,29 @@ Create an object with the name rocket with the following:
     flyToC()
 */
 
-let rocket = {};
+let rocket = {
+  fuel: 200,
+  fuelCostToA: 20,
+  fuelCostToB: 30,
+  fuelCostToC: 35,
+  flyToPoint(cost) {
+    cost *= 2
+    if (this.fuel - cost >= 0) {
+      this.fuel -= cost
+      return true
+    }
+    return false
+  },
+  flyToA() {
+    return this.flyToPoint(this.fuelCostToA)
+  },
+  flyToB() {
+    return this.flyToPoint(this.fuelCostToB)
+  },
+  flyToC() {
+    return this.flyToPoint(this.fuelCostToC)
+  }
+};
 
 //Test command (in terminal) "npm run test:d2:medium:rocket"
 module.exports = { rocket };

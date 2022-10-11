@@ -7,7 +7,7 @@ If the number is not divisible by either 3 or 5, return the number.
  */
 
 function fizzBuzz(num) {
-    let str = (num % 3 == 0 ? "FIZZ" : "") + (num % 5 == 0 ? "BUZZ" : "")
+    let str = (num % 3 === 0 ? "FIZZ" : "") + (num % 5 === 0 ? "BUZZ" : "")
     return str ? str : num
 }
 

@@ -6,5 +6,16 @@
     how much weight they are under or over to balance the three ships. 
 
  */
+
+const cargo = {
+    ship1: 30,
+    ship2: 20,
+    ship3: 10,
+    shareTheLoad() {
+        const average = (this.ship1 + this.ship2 + this.ship3) / 3;
+        return { ship1: average - this.ship1, ship2: average - this.ship2, ship3: average - this.ship3 }
+    }
+}
+
 // Test command (in terminal) "npm run test:d2:medium:cargo"
 module.exports = { cargo };

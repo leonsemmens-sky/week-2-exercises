@@ -19,7 +19,7 @@
     "test:d1:medium:triangle": "jest ./test/d1-js-basics/medium/triangle --silent --verbose --runInBand",
     "test:d1:hard": "jest ./test/d1-js-basics/hard --silent --verbose --runInBand --bail",
     "test:d1:hard:tax-bands": "jest ./test/d1-js-basics/hard/tax-bands --silent --verbose --runInBand",
-    "test:d2": "jest ./test/d2-js-basics --silent --verbose --runInBand --bail",
+    "test:d2": "jest ./test/d2-objects --silent --verbose --runInBand --bail",
     "test:d2:easy:planets-1": "jest ./test/d2-objects/easy/planets-1 --silent --verbose --runInBand",
     "test:d2:easy:planets-2": "jest ./test/d2-objects/easy/planets-2 --silent --verbose --runInBand",
     "test:d2:easy:string-methods": "jest ./test/d2-objects/easy/string-methods --silent --verbose --runInBand",
