@@ -40,5 +40,34 @@ let itemsList = {
   },
 };
 
+let checkout = {
+  items: [],
+  weight: 0,
+  cost: 0,
+  scanItems(items) {
+    for (let item of items) {
+      this.items.push(item)
+      this.weight += item.weight
+      this.cost += item.cost
+    }
+  },
+  removeItem(item) {
+    let index = this.items.lastIndexOf(item)
+    if (index >= 0) {
+      this.items.splice(index, 1)
+      this.weight -= item.weight
+      this.cost -= item.cost
+    }
+  },
+  reset() {
+    this.items = []
+    this.weight = 0
+    this.cost = 0
+  },
+  finalise() {
+    return this.cost
+  }
+};
+
 // Test command (in terminal) "npm run test:d3:hard"
 module.exports = { checkout, itemsList };
