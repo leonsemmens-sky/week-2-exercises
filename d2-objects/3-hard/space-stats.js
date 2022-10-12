@@ -28,12 +28,15 @@ const spaceStats = {
     ageInEarthDays: 0,
     ageInEarthYears: 0,
     weightInKG: 0,
+
+    //birthday: mm/dd/yyyy
     setAgeInEarthDays(birthday) {
         let birthDate = new Date(birthday);
         let timeAlive = new Date() - birthDate;
         this.ageInEarthDays = Math.round(timeAlive / (1000 * 3600 * 24));
         this.ageInEarthYears = this.ageInEarthDays / 365.25;
     },
+
     setWeightInKG(kg) {
         this.weightInKG = kg;
     },
@@ -56,6 +59,7 @@ const spaceStats = {
         return this.ageInEarthYears * (365.25 / 687);
     }
 }
+
 
 // Test command (in terminal) "npm run test:d2:hard:spaceFacts"
 module.exports = { spaceStats };
