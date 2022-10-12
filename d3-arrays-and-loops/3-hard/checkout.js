@@ -25,7 +25,20 @@
             returns final cost
   */
 
-let itemsList = {};
+let itemsList = {
+  cheese: {
+    weight: 500,
+    cost: 3,
+  },
+  bread: {
+    weight: 200,
+    cost: 1.4,
+  },
+  milk: {
+    weight: 1000,
+    cost: 1.5,
+  },
+};
 
 // Test command (in terminal) "npm run test:d3:hard"
 module.exports = { checkout, itemsList };
