@@ -7,7 +7,7 @@
  */
 
 function unduplicate(arr) {
-  // code here
+  return arr.filter((val, i) => !arr.includes(val, i + 1))
 }
 
 module.exports = { unduplicate };

@@ -5,8 +5,14 @@
  * @returns {any[]}
  */
 
-function cleanUp (arr) {
-  // code here
+function cleanUp(arr) {
+  return arr.reduce((newArr, value) => {
+    let num = Number(value)
+    if (!isNaN(num)) {
+      newArr.push(num)
+    }
+    return newArr
+  }, [])
 }
 
 module.exports = { cleanUp }

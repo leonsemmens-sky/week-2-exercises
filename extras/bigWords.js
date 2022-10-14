@@ -6,8 +6,9 @@
  * @returns {string[]}
  */
 
-function bigWords (words) {
-  // code here
+function bigWords(words) {
+  let averageLength = words.reduce((prev, word) => prev + word.length, 0) / words.length
+  return words.filter(word => word.length >= averageLength)
 }
 
 module.exports = { bigWords }

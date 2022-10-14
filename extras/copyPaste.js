@@ -6,8 +6,10 @@
  * @returns {any[]}
  */
 
-function copyPaste (n, el) {
-  // code here
+function copyPaste(n, el) {
+  let arr = []
+  for (let _ = 0; _ < n; _++) arr.push(el);
+  return arr
 }
 
 module.exports = { copyPaste }

@@ -8,8 +8,13 @@
  * @returns {any[]}
  */
 
-function rotate (arr, r) {
-  // code here
+function rotate(arr, r) {
+  return arr.reduce((rotated, val, i) => {
+    let newI = i - r
+    newI += newI < 0 ? arr.length : (newI > arr.length - 1 ? -arr.length : 0)
+    rotated[newI] = val
+    return rotated
+  }, [])
 }
 
 module.exports = { rotate }

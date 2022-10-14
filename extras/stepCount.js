@@ -7,8 +7,19 @@
  * @returns {number}
  */
 
-function stepCount (arr) {
-  // code here
+function stepCount(arr) {
+  let continuousIncreasingSubsequenceCount = 0
+  for (let i = 0; i < arr.length; i++) {
+    let subSequenceCount = 0
+    for (let r = 0; r < arr.length - i; r++) {
+      if (arr[i + r] < arr[i + r + 1]) {
+        subSequenceCount++
+      } else break;
+    }
+
+    continuousIncreasingSubsequenceCount += subSequenceCount
+  }
+  return continuousIncreasingSubsequenceCount
 }
 
 module.exports = { stepCount }
